@@ -6,6 +6,15 @@
     <string name="hello_world">Hello world111!</string>
 
     <string name="btnTextC">C</string>
+	<string name="btnTextC_s">C#/Db</string>    
    	<string name="btnTextD">D</string>
+   	<string name="btnTextD_s">D#/Eb</string>
    	<string name="btnTextE">E</string>
+	<string name="btnTextF">F</string>
+	<string name="btnTextF_s">F#/Gb</string>	
+   	<string name="btnTextG">G</string>
+	<string name="btnTextG_s">G#/Ab</string>   	
+   	<string name="btnTextA">A</string>   	
+	<string name="btnTextA_s">A#/Bb</string>   	
+	<string name="btnTextB">B</string>   	
 </resources>

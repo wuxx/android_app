@@ -17,7 +17,8 @@ public class MainActivity extends Activity {
         Button btn = (Button)findViewById(R.id.btnC);
         TextView textview1 = (TextView)findViewById(R.id.textview1);
         TextView textview2 = (TextView)findViewById(R.id.textview2);
-        
+
+/*        
         btn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -28,11 +29,17 @@ public class MainActivity extends Activity {
 		     	
 			}
 		});
+*/		
 		
     }
 
     public void clickHandler(View v){
     	switch (v.getId()) {
+    	case R.id.btnC:
+    		Toast.makeText(this, "Button D clicked!", Toast.LENGTH_SHORT).show();
+    		TextView textview1 = (TextView)findViewById(R.id.textview1);
+    		textview1.setText("button C");
+    		break;    	
     	case R.id.btnD:
     		Toast.makeText(this, "Button D clicked!", Toast.LENGTH_SHORT).show();
     		TextView textview2 = (TextView)findViewById(R.id.textview2);
@@ -40,6 +47,18 @@ public class MainActivity extends Activity {
     		break;
     	case R.id.btnE:
     		Toast.makeText(this, "Button E clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	case R.id.btnF:
+    		Toast.makeText(this, "Button F clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	case R.id.btnG:
+    		Toast.makeText(this, "Button G clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	case R.id.btnA:
+    		Toast.makeText(this, "Button A clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	case R.id.btnB:
+    		Toast.makeText(this, "Button B clicked!", Toast.LENGTH_SHORT).show();
     		break;
     	default:
     		Toast.makeText(this, "Unknown Button clicked!", Toast.LENGTH_SHORT).show();

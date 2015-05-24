@@ -29,7 +29,22 @@ public class MainActivity extends Activity {
 		
     }
 
+    public void clickHandler(View v){
+    	switch (v.getId()) {
+    	case R.id.btnD:
+    		Toast.makeText(this, "Button D clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	case R.id.btnE:
+    		Toast.makeText(this, "Button E clicked!", Toast.LENGTH_SHORT).show();
+    		break;
+    	default:
+    		Toast.makeText(this, "Unknown Button clicked!", Toast.LENGTH_SHORT).show();
+    	}
 
+    
+
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

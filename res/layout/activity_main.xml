@@ -17,19 +17,23 @@
             android:paddingBottom="20dp"
             android:orientation="horizontal"
 	    >
+	    
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/hello_world"
-	        android:id="@+id/textview1"
+	        android:text="一"
+	        android:gravity="center"
+	        android:textSize="20sp"
+	        android:id="@+id/textview_string_index"
 	        android:layout_weight="1"           
 	         />
 
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="弦"       
-	        android:id="@+id/textstring_index"
+	        android:text="弦"      
+	        android:gravity="center"
+	        android:textSize="20sp" 	        
 	        android:layout_weight="1"               
 	         />    
   
@@ -37,27 +41,30 @@
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="textview2"       
-	        android:id="@+id/textview2"
+	        android:text="5"
+	        android:gravity="center"
+	        android:textSize="20sp"       
+	        android:id="@+id/textview_freq_index"
 	        android:layout_weight="1"               
 	         />  
 	           
 		<TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="品"       
-	        android:id="@+id/textstring_bar"
+	        android:text="品"
+	        android:gravity="center"
+	        android:textSize="20sp"        	        
 	        android:layout_weight="1"               
 	         />  	         
 	</LinearLayout>
 
 	<TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="TEST"       
-       android:id="@+id/textview3"
-       android:layout_weight="1"               
-        />  
+	    android:id="@+id/textview_ret"
+	    android:layout_width="280dp"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:text=""
+	    android:textSize="40sp" />
          	
 	<LinearLayout
 	        android:layout_width="match_parent"

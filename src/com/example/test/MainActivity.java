@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -14,7 +15,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = (Button)findViewById(R.id.btnC);
-
+        TextView textview1 = (TextView)findViewById(R.id.textview1);
+        TextView textview2 = (TextView)findViewById(R.id.textview2);
         
         btn.setOnClickListener(new View.OnClickListener() {
 			
@@ -33,6 +35,8 @@ public class MainActivity extends Activity {
     	switch (v.getId()) {
     	case R.id.btnD:
     		Toast.makeText(this, "Button D clicked!", Toast.LENGTH_SHORT).show();
+    		TextView textview2 = (TextView)findViewById(R.id.textview2);
+    		textview2.setText("button D");
     		break;
     	case R.id.btnE:
     		Toast.makeText(this, "Button E clicked!", Toast.LENGTH_SHORT).show();

@@ -16,8 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
         android:id="@+id/textview1"
-        android:layout_weight="1"  
-        android:background="@drawable/textview_border"  
+        android:layout_weight="1"           
          />
     
     <TextView

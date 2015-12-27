@@ -17,56 +17,97 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_exit=0x7f080012;
-        public static final int action_settings=0x7f080011;
-        public static final int action_start=0x7f080010;
-        public static final int btnA=0x7f08000c;
-        public static final int btnA_s=0x7f08000d;
-        public static final int btnB=0x7f08000e;
-        public static final int btnC=0x7f080003;
-        public static final int btnC_s=0x7f080004;
-        public static final int btnD=0x7f080005;
-        public static final int btnD_s=0x7f080006;
-        public static final int btnE=0x7f080007;
-        public static final int btnF=0x7f080008;
-        public static final int btnF_s=0x7f080009;
-        public static final int btnG=0x7f08000a;
-        public static final int btnG_s=0x7f08000b;
-        public static final int textview_freq_index=0x7f080001;
-        public static final int textview_ret=0x7f080002;
-        public static final int textview_string_index=0x7f080000;
-        public static final int textview_timer=0x7f08000f;
+        public static final int action_exit=0x7f090012;
+        public static final int action_settings=0x7f090011;
+        public static final int action_start=0x7f090010;
+        public static final int btnA=0x7f09000c;
+        public static final int btnA_s=0x7f09000d;
+        public static final int btnB=0x7f09000e;
+        public static final int btnC=0x7f090003;
+        public static final int btnC_s=0x7f090004;
+        public static final int btnD=0x7f090005;
+        public static final int btnD_s=0x7f090006;
+        public static final int btnE=0x7f090007;
+        public static final int btnF=0x7f090008;
+        public static final int btnF_s=0x7f090009;
+        public static final int btnG=0x7f09000a;
+        public static final int btnG_s=0x7f09000b;
+        public static final int textview_freq_index=0x7f090001;
+        public static final int textview_ret=0x7f090002;
+        public static final int textview_string_index=0x7f090000;
+        public static final int textview_timer=0x7f09000f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
+    }
+    public static final class raw {
+        public static final int a1=0x7f040000;
+        public static final int a2=0x7f040001;
+        public static final int a3=0x7f040002;
+        public static final int as1=0x7f040003;
+        public static final int as2=0x7f040004;
+        public static final int as3=0x7f040005;
+        public static final int b1=0x7f040006;
+        public static final int b2=0x7f040007;
+        public static final int b3=0x7f040008;
+        public static final int c2=0x7f040009;
+        public static final int c3=0x7f04000a;
+        public static final int c4=0x7f04000b;
+        public static final int cs2=0x7f04000c;
+        public static final int cs3=0x7f04000d;
+        public static final int cs4=0x7f04000e;
+        public static final int d2=0x7f04000f;
+        public static final int d3=0x7f040010;
+        public static final int d4=0x7f040011;
+        public static final int ds2=0x7f040012;
+        public static final int ds3=0x7f040013;
+        public static final int ds4=0x7f040014;
+        public static final int e1=0x7f040015;
+        public static final int e2=0x7f040016;
+        public static final int e3=0x7f040017;
+        public static final int e4=0x7f040018;
+        public static final int f1=0x7f040019;
+        public static final int f2=0x7f04001a;
+        public static final int f3=0x7f04001b;
+        public static final int fail=0x7f04001c;
+        public static final int fs1=0x7f04001d;
+        public static final int fs2=0x7f04001e;
+        public static final int fs3=0x7f04001f;
+        public static final int g1=0x7f040020;
+        public static final int g2=0x7f040021;
+        public static final int g3=0x7f040022;
+        public static final int gs1=0x7f040023;
+        public static final int gs2=0x7f040024;
+        public static final int gs3=0x7f040025;
+        public static final int key_sound=0x7f040026;
     }
     public static final class string {
-        public static final int action_exit=0x7f050003;
-        public static final int action_settings=0x7f050001;
-        public static final int action_start=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int btnTextA=0x7f05000d;
-        public static final int btnTextA_s=0x7f05000e;
-        public static final int btnTextB=0x7f05000f;
-        public static final int btnTextC=0x7f050004;
-        public static final int btnTextC_s=0x7f050005;
-        public static final int btnTextD=0x7f050006;
-        public static final int btnTextD_s=0x7f050007;
-        public static final int btnTextE=0x7f050008;
-        public static final int btnTextF=0x7f050009;
-        public static final int btnTextF_s=0x7f05000a;
-        public static final int btnTextG=0x7f05000b;
-        public static final int btnTextG_s=0x7f05000c;
+        public static final int action_exit=0x7f060003;
+        public static final int action_settings=0x7f060001;
+        public static final int action_start=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int btnTextA=0x7f06000d;
+        public static final int btnTextA_s=0x7f06000e;
+        public static final int btnTextB=0x7f06000f;
+        public static final int btnTextC=0x7f060004;
+        public static final int btnTextC_s=0x7f060005;
+        public static final int btnTextD=0x7f060006;
+        public static final int btnTextD_s=0x7f060007;
+        public static final int btnTextE=0x7f060008;
+        public static final int btnTextF=0x7f060009;
+        public static final int btnTextF_s=0x7f06000a;
+        public static final int btnTextG=0x7f06000b;
+        public static final int btnTextG_s=0x7f06000c;
     }
     public static final class style {
         /** 
@@ -90,10 +131,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

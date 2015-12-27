@@ -1,8 +1,16 @@
+/*	author: wuxx
+*
+* DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE   
+* TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION  
+* 0. You just DO WHAT THE FUCK YOU WANT TO.
+**/
 package com.example.test;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,9 +26,9 @@ public class MainActivity extends Activity {
 	private static final int PLAYING=1;
 	private static final int N_PLAYING=0;
 	
-    private global_data gd;
-    private TextView textview_si;
-    private TextView textview_fi;
+    private fretboard fb;
+    private TextView textview_si;	/* string index [1, 6] */
+    private TextView textview_fi;	/* fret   index [0,11] */
     private TextView textview_timer;        
     private int counter = 20;
     private Handler my_handler;
@@ -28,16 +36,64 @@ public class MainActivity extends Activity {
     private int wrong_ret = 0;
     private int status = 0;
     private MenuItem item_start;
-    
+    private SoundPool sp;
+
+    private int[] note = new int[41] ;  ; /* [c1-e1] [e1 - e4] 4 + 3*12+1 */
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        global_data gd = new global_data();
-        this.gd = gd;
+        this.fb = new fretboard();
+        sp= new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
         
-        gd.update();
+        this.fb.update();
 
+        note[ 0] = sp.load(this, R.raw.fail, 1);	/* -1 c1 */
+        note[ 1] = -1;	/* cs1 */
+        note[ 2] = -1;	/* d1 */
+        note[ 3] = -1;	/* ds1 */        
+        note[ 4] = sp.load(this, R.raw.e1, 1);
+        note[ 5] = sp.load(this, R.raw.f1, 1);
+        note[ 6] = sp.load(this, R.raw.fs1, 1);
+        note[ 7] = sp.load(this, R.raw.g1, 1);
+        note[ 8] = sp.load(this, R.raw.gs1, 1);
+        note[ 9] = sp.load(this, R.raw.a1, 1);
+        note[10] = sp.load(this, R.raw.as1, 1);
+        note[11] = sp.load(this, R.raw.b1, 1);
+        
+        note[12] = sp.load(this, R.raw.c2, 1);
+        note[13] = sp.load(this, R.raw.cs2, 1);
+        note[14] = sp.load(this, R.raw.d2, 1);
+        note[15] = sp.load(this, R.raw.ds2, 1);        
+        note[16] = sp.load(this, R.raw.e2, 1);
+        note[17] = sp.load(this, R.raw.f2, 1);
+        note[18] = sp.load(this, R.raw.fs2, 1);
+        note[19] = sp.load(this, R.raw.g2, 1);
+        note[20] = sp.load(this, R.raw.gs2, 1);
+        note[21] = sp.load(this, R.raw.a2, 1);
+        note[22] = sp.load(this, R.raw.as2, 1);
+        note[23] = sp.load(this, R.raw.b2, 1);
+
+        note[24] = sp.load(this, R.raw.c3, 1);
+        note[25] = sp.load(this, R.raw.cs3, 1);
+        note[26] = sp.load(this, R.raw.d3, 1);
+        note[27] = sp.load(this, R.raw.ds3, 1);        
+        note[28] = sp.load(this, R.raw.e3, 1);
+        note[29] = sp.load(this, R.raw.f3, 1);
+        note[30] = sp.load(this, R.raw.fs3, 1);
+        note[31] = sp.load(this, R.raw.g3, 1);
+        note[32] = sp.load(this, R.raw.gs3, 1);
+        note[33] = sp.load(this, R.raw.a3, 1);
+        note[34] = sp.load(this, R.raw.as3, 1);
+        note[35] = sp.load(this, R.raw.b3, 1);
+        
+        note[36] = sp.load(this, R.raw.c4, 1);
+        note[37] = sp.load(this, R.raw.cs4, 1);
+        note[38] = sp.load(this, R.raw.d4, 1);
+        note[39] = sp.load(this, R.raw.ds4, 1);        
+        note[40] = sp.load(this, R.raw.e4, 1);
+        
+        
         /*
         System.out.println("random num:");
         System.out.println(gd.string_index);
@@ -46,10 +102,11 @@ public class MainActivity extends Activity {
         
         this.textview_si = (TextView)findViewById(R.id.textview_string_index);       
         this.textview_fi = (TextView)findViewById(R.id.textview_freq_index);
-        this.textview_si.setText(gd.string_name[gd.string_index]);
+        this.textview_si.setText(this.fb.string_name[this.fb.string_index]);
   
-        this.textview_fi.setText(Integer.toString(gd.fret_index));      
+        this.textview_fi.setText(Integer.toString(this.fb.fret_index));      
         this.item_start = (MenuItem)findViewById(R.id.action_start);
+
         
         my_handler = new Handler() {  
             public void handleMessage(Message msg) {                    
@@ -74,18 +131,18 @@ public class MainActivity extends Activity {
 
     public void clickHandler(View v){
         
-        int tone_set = this.gd.tone_set;
+        int tone_set = this.fb.tone;
         int tone_get = 0;
 
         TextView textview_ret = (TextView)findViewById(R.id.textview_ret);         
     	switch (v.getId()) {
     	case R.id.btnC:
     		System.out.println("button C clicked");
-    		tone_get = 0;
+    		tone_get = 0;    		
     		break;    	
        	case R.id.btnC_s:
     		System.out.println("button C_s clicked");
-    		tone_get = 1;
+    		tone_get = 1;    		
     		break;        		
     	case R.id.btnD:
     		System.out.println("button D clicked");
@@ -133,24 +190,26 @@ public class MainActivity extends Activity {
     	
     	System.out.println("tone_set" + tone_set);
     	System.out.println("tone_get" + tone_get);
-    	if (tone_get == tone_set) {
+    	if (tone_get == (tone_set % 12)) {
     		textview_ret.setText("ÕýÈ·");
+    		sp.play(note[tone_set], 1, 1, 0, 0, 1);
     		this.right_ret++;
     	} else {
     		textview_ret.setText("´íÎó");
     		this.wrong_ret++;
-    		Toast.makeText(this, "string " + this.gd.string_index + " freq "  + this.gd.fret_index + " correct answer is " + this.gd.tone_name[tone_set], 
+    		sp.play(note[0], 1, 1, 0, 0, 1);
+    		Toast.makeText(this, "string " + this.fb.string_index + " freq "  + this.fb.fret_index + " correct answer is " + this.fb.tone_name[tone_set % 12], 
     						Toast.LENGTH_SHORT).show();
     	}
-    	System.out.println("string" + this.gd.string_index);
-    	System.out.println("fret" + this.gd.fret_index);
-    	System.out.println(this.gd.tone_set);
+    	System.out.println("string" + this.fb.string_index);
+    	System.out.println("fret" + this.fb.fret_index);
+    	System.out.println(this.fb.tone);
     	
-    	this.gd.update();
+    	this.fb.update();
     	
     	
-    	this.textview_si.setText(gd.string_name[this.gd.string_index]);    	 
-        this.textview_fi.setText(Integer.toString(this.gd.fret_index));      
+    	this.textview_si.setText(fb.string_name[this.fb.string_index]);    	 
+        this.textview_fi.setText(Integer.toString(this.fb.fret_index));      
   
     }
     

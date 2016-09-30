@@ -2,6 +2,6 @@
 可设置挑战，在规定时间内回答尽可能多的题目。
 
 
- ![screenshot](https://github.com/wuxx/android_app/blob/master/Screenshot.png)
+ ![screenshot](https://github.com/wuxx/android_app/blob/master/screenshot.png)
 
 

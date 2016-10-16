@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">fretboard_helper</string>
+    <string name="app_name">指板助手</string>
     <string name="action_settings">Settings</string>
     <string name="action_start">Start</string>
     <string name="action_exit">Exit</string>

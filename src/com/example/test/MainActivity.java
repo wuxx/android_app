@@ -18,6 +18,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,12 +43,14 @@ public class MainActivity extends Activity {
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         this.fb = new fretboard();
         sp= new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
         
         this.fb.update();
-
+        /* tones on guitar fretboard string6-0 - string1-12 */ 
+        /* e1 - b1; c2 - b2; c3 - b3; c4 - e4; */
         note[ 0] = sp.load(this, R.raw.fail, 1);	/* -1 c1 */
         note[ 1] = -1;	/* cs1 */
         note[ 2] = -1;	/* d1 */
